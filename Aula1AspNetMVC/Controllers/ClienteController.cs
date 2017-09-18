@@ -1,4 +1,5 @@
-﻿using Aula1AspNetMVC.Models;
+﻿using Aula1AspNetMVC.Context;
+using Aula1AspNetMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,8 @@ namespace Aula1AspNetMVC.Controllers
         // GET: Cliente
         public ActionResult Teste()
         {
-            var cliente = new Cliente()
-            {
-                Nome = "ASP",
-                SobreNome = "MVC5",
-                DataCadastro = DateTime.Now,
-                Id = 1,
-            };
-            ViewBag.Cliente = "Texto";
+            var cliente = new Aula1Context().Clientes.Where(c => c.Id == 1).SingleOrDefault();
+            ViewBag.Cliente = cliente;
             //ViewData["Cliente"] = cliente;
             return View( "Index", cliente);
         }

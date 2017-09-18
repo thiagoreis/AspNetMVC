@@ -1,0 +1,19 @@
+﻿@using Aula1AspNetMVC.Models
+@model Aula1AspNetMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <p>@Model.Nome</p>
+    <p>@Model.DataCadastro</p>
+</div>
+
+@{ 
+        <p><b>@ViewData["Cliente"]</b></p>
+
+}

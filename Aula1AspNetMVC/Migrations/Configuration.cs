@@ -10,6 +10,7 @@ namespace Aula1AspNetMVC.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Aula1AspNetMVC.Context.Aula1Context context)

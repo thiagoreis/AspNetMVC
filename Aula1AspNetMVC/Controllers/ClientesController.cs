@@ -15,13 +15,8 @@ namespace Aula1AspNetMVC.Controllers
     {
         private Aula1Context db = new Aula1Context();
 
-        public ActionResult Teste()
-        {
-            ViewBag.Ola = "<h2>Razor</h2>";
-            ViewBag.Id = new SelectList(db.Clientes.ToList(), "Id", "Nome", 2);
-            return View(db.Clientes.ToList());
-        }
         // GET: Clientes
+        [HttpGet]
         public ActionResult Index()
         {
             return View(db.Clientes.ToList());
@@ -51,6 +46,7 @@ namespace Aula1AspNetMVC.Controllers
         // POST: Clientes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Action Selector
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,SobreNome,Email")] Cliente cliente)

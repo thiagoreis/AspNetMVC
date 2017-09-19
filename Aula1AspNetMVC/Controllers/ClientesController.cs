@@ -17,7 +17,8 @@ namespace Aula1AspNetMVC.Controllers
 
         public ActionResult Teste()
         {
-            ViewBag.Ola = "<h2>Ola</h2>";
+            ViewBag.Ola = "<h2>Razor</h2>";
+            ViewBag.Id = new SelectList(db.Clientes.ToList(), "Id", "Nome", 2);
             return View(db.Clientes.ToList());
         }
         // GET: Clientes

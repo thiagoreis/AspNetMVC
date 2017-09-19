@@ -14,7 +14,13 @@ namespace Aula1AspNetMVC.Controllers
     public class ClientesController : Controller
     {
         private Aula1Context db = new Aula1Context();
-
+        [OutputCache(Duration = 30, VaryByParam = "id")]
+        public ContentResult Teste(int id )
+        {
+            return Content(DateTime.Now.ToString());
+                
+        }
+    
         // GET: Clientes
         [HttpGet]
         public ActionResult Index()
